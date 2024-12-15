@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "tg-auth"
+version = "0.1.0"
+description = "Django проект с авторизацией через Telegram-бота."
+authors = ["itzero-ru <paw100d@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.1.4"
+pytelegrambotapi = "^4.25.0"
+python-dotenv = "^1.0.1"
+gunicorn = "^23.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

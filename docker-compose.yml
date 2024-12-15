@@ -1,0 +1,19 @@
+services:
+
+  backend:
+    build:
+      dockerfile: dev.Dockerfile
+    # command: uvicorn fastapi_async_sql_profiler.main:app --reload --host 0.0.0.0 --port 80
+    # command: gunicorn config.wsgi:application -w 9 --bind=0.0.0.0:80 --capture-output --log-level debug --access-logfile - --error-logfile -
+    command: make docker-run
+    container_name: django_backend
+    environment:
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+      - TG_BOT_NAME=${TG_BOT_NAME}
+      - TG_BOT_TOKEN=${TG_BOT_TOKEN}
+    restart: unless-stopped
+    volumes:
+      - .:/app/:delegated # enable hot code reload in debug mode
+    #   - ./data/backend/logs:/data/logs
+    ports:
+      - 80:80

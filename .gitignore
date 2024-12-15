@@ -1,0 +1,20 @@
+.vscode
+.idea
+.venv
+
+__pycache__
+*.py[cod]
+*$py.class
+
+.DS_Store
+*.sqlite3
+*.pyc
+*.db
+*.pid
+*.txt
+# Only for Development only
+# **/migrations/**
+# !**/migrations
+# !**/migrations/__init__.py
+.env
+
